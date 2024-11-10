@@ -15,8 +15,8 @@ namespace lab3cl
 {
     public partial class Form1 : Form
     {
-        string storageAccountKey = "p11jLME1O4RwzaxmH+5u1w+bDQwUT8ZCpz6rw0LNN4JgMK2FzTIGBUCE9E/kDRNS281ZuENQxeBF+AStB75qFQ==";
-        BlobServiceClient blobServiceClient;
+        string storageAccountKey = "DefaultEndpointsProtocol=https;AccountName=chechelnytska;AccountKey=p11jLME1O4RwzaxmH+5u1w+bDQwUT8ZCpz6rw0LNN4JgMK2FzTIGBUCE9E/kDRNS281ZuENQxeBF+AStB75qFQ==;EndpointSuffix=core.windows.net";
+        BlobServiceClient blobServiceClient = Ext.blobServiceClient;
         string containerName = "images";
         public Form1()
         {
@@ -116,19 +116,31 @@ namespace lab3cl
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private async void button4_Click(object sender, EventArgs e)
         {
-            //BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
-            //Form2 form = new Form2(blobServiceClient, containerName);
-            //form.ShowDialog();
-            //if (form.DialogResult == DialogResult.OK)
-            //{
-            //    BlobClient blobClient = containerClient.GetBlobClient(form.fileName);
-            //    MemoryStream memoryStream = new MemoryStream();
-            //    await blobClient.DownloadToAsync(memoryStream);
-            //    Bitmap bitmap = new Bitmap(memoryStream);
-            //    pictureBox1.Image = bitmap;
-            //}
+            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
+            Form2 form = new Form2(blobServiceClient, containerName);
+            form.ShowDialog();
+            if (form.DialogResult == DialogResult.OK)
+            {
+                BlobClient blobClient = containerClient.GetBlobClient(form.fileName);
+               MemoryStream memoryStream = new MemoryStream();
+                await blobClient.DownloadToAsync(memoryStream);
+               Bitmap bitmap = new Bitmap(memoryStream);
+                pictureBox1.Image = bitmap;
+            }
+        }
+
+        private async void button5_Click(object sender, EventArgs e)
+        {
+            BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
+            Form2 form = new Form2(blobServiceClient, containerName);
+            form.ShowDialog();
+            if (form.DialogResult == DialogResult.OK)
+            {
+                BlobClient blobClient = containerClient.GetBlobClient(form.fileName);
+                await blobClient.DeleteAsync();
+            }
         }
     }
 }

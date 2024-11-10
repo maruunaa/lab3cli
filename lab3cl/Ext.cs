@@ -14,13 +14,14 @@ namespace lab3cl
         static string storageUri = "https://chechelnytska.table.core.windows.net/";
         static string accountName = "chechelnytska";
         static string storageAccountKey = "p11jLME1O4RwzaxmH+5u1w+bDQwUT8ZCpz6rw0LNN4JgMK2FzTIGBUCE9E/kDRNS281ZuENQxeBF+AStB75qFQ==";
+        private static readonly string connString = "DefaultEndpointsProtocol=https;AccountName=chechelnytska;AccountKey=p11jLME1O4RwzaxmH+5u1w+bDQwUT8ZCpz6rw0LNN4JgMK2FzTIGBUCE9E/kDRNS281ZuENQxeBF+AStB75qFQ==;EndpointSuffix=core.windows.net";
 
         public static TableServiceClient serviceClient = new TableServiceClient(new Uri(storageUri),
             new TableSharedKeyCredential(accountName, storageAccountKey));
 
 
         static string containerName = "images";
-        static BlobServiceClient blobServiceClient = new BlobServiceClient(storageUri);
+        public static BlobServiceClient blobServiceClient = new BlobServiceClient(connString);
        // static BlobServiceClient blobServiceClient;
         //Get table Client
         public static async Task<TableClient> GetTableClient(string TableName)

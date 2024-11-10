@@ -45,6 +45,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +133,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(181, 220);
+            this.button1.Location = new System.Drawing.Point(51, 204);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 35);
             this.button1.TabIndex = 10;
@@ -145,12 +146,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(377, 26);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(252, 166);
+            this.dataGridView1.Size = new System.Drawing.Size(252, 86);
             this.dataGridView1.TabIndex = 11;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(377, 220);
+            this.button2.Location = new System.Drawing.Point(176, 204);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(101, 35);
             this.button2.TabIndex = 12;
@@ -160,9 +161,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(377, 281);
+            this.button3.Location = new System.Drawing.Point(465, 298);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 35);
+            this.button3.Size = new System.Drawing.Size(71, 35);
             this.button3.TabIndex = 13;
             this.button3.Text = "Upload";
             this.button3.UseVisualStyleBackColor = true;
@@ -170,9 +171,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(496, 220);
+            this.pictureBox1.Location = new System.Drawing.Point(377, 127);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(132, 95);
+            this.pictureBox1.Size = new System.Drawing.Size(252, 148);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
@@ -182,19 +184,30 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(265, 286);
+            this.button4.Location = new System.Drawing.Point(377, 298);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(83, 28);
+            this.button4.Size = new System.Drawing.Size(82, 35);
             this.button4.TabIndex = 15;
             this.button4.Text = "View";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(557, 298);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(71, 34);
+            this.button5.TabIndex = 16;
+            this.button5.Text = "Delete";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 360);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
@@ -239,6 +252,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
